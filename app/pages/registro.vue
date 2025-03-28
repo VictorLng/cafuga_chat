@@ -4,7 +4,7 @@
     <div class="register-container">
       <div class="register-form-container">
         <h2>Crie sua conta no Cafuga</h2>
-        <p class="subtitle">Junte-se à nossa comunidade</p>
+        <p class="subtitle">Junte-se à nossa comunidade PODRE E NOJENTA</p>
 
         <form @submit.prevent="register" class="register-form">
           <div class="form-group">
@@ -14,7 +14,7 @@
               id="username"
               v-model="formData.username"
               required
-              placeholder="Como deseja ser chamado?"
+              placeholder="Como deseja ser chamado? (Extritamente Proibido Elu/Delu)"
             />
           </div>
 
@@ -55,7 +55,8 @@
             <input type="checkbox" id="terms" v-model="formData.terms" required />
             <label for="terms">
               Concordo com os <a href="#" class="link">Termos de Uso</a> e a
-              <a href="#" class="link">Política de Privacidade</a>
+              <a href="#" class="link">Política de Privacidade</a> e
+              <a href="#" class="link">Vender Minha Alma Ao Massa Cinzenta e o Clube Da Luta</a>
             </label>
           </div>
 
@@ -70,10 +71,10 @@
       <div class="register-info">
         <h3>Benefícios da comunidade Cafuga</h3>
         <ul>
-          <li>Chat exclusivo com os membros</li>
-          <li>Conteúdo personalizado</li>
-          <li>Participe de eventos especiais</li>
-          <li>Conecte-se com seus amigos do Discord</li>
+          <li>Ser feliz e troca ideia com amigos</li>
+          <li>Conteúdo nojeto e escatologico das calls</li>
+          <li>Participe de eventos especiais como o filf de o New Liberalismo</li>
+          <li>Conecte-se com seus "amigos" do Discord</li>
         </ul>
       </div>
     </div>

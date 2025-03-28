@@ -47,14 +47,13 @@ export default {
       menuItems: [
         { title: 'Início', path: '/' },
         { title: 'Chat', path: '/chat' },
-        { title: 'Sobre', path: '/sobre' },
-        { title: 'Contato', path: '/contato' }
+        { title: 'Sobre', path: '/sobre' }
+        // Item de Contato removido
       ]
     }
   },
   methods: {
     updateCurrentPath() {
-      // Em uma aplicação Nuxt real, você pode usar o router para obter o caminho atual
       this.currentPath = window.location.pathname;
     }
   },

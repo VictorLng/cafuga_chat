@@ -6,14 +6,14 @@
       <slot />
     </main>
 
-    <PageTransition :is-loading="isPageLoading" />
+    <PageTransition :is-loading="isLoading" />
   </div>
 </template>
 
-<script lang="ts">
-import { ref, onMounted } from 'vue';
-import HeaderPages from '../components/HeaderPages.vue';
-import PageTransition from '../components/PageTransition.vue';
+<script>
+import HeaderPages from '../components/HeaderPages.vue'
+import PageTransition from '../components/PageTransition.vue'
+import { usePageTransition } from '~/composables/usePageTransition'
 
 export default {
   name: 'DefaultLayout',
@@ -21,25 +21,17 @@ export default {
     HeaderPages,
     PageTransition
   },
-  setup() {
-    const isPageLoading = ref(false);
-
-    onMounted(() => {
-      const nuxtApp = useNuxtApp();
-      if (nuxtApp.$pageLoadingState) {
-        // Observe a propriedade isLoading do plugin
-        isPageLoading.value = nuxtApp.$pageLoadingState.isLoading.value;
-
-        // Criar um watcher para atualizar o estado local
-        watch(() => nuxtApp.$pageLoadingState.isLoading.value, (newValue) => {
-          isPageLoading.value = newValue;
-        });
-      }
-    });
-
+  data() {
     return {
-      isPageLoading
-    };
+      isLoading: false
+    }
+  },
+  mounted() {
+    const { isLoading } = usePageTransition()
+
+    this.$watch(() => isLoading.value, (newValue) => {
+      this.isLoading = newValue
+    }, { immediate: true })
   }
 }
 </script>

@@ -1,4 +1,5 @@
 <template>
+  <HeaderPages />
   <div class="welcome-container">
     <div class="welcome-content">
       <h1 class="welcome-title">BEM-VINDO AO CAFUGA</h1>
@@ -17,6 +18,8 @@
 </template>
 
 <script lang="ts">
+import HeaderPages from '~/components/HeaderPages.vue'
+
 export default {
   layout: 'default',
   mounted() {
@@ -27,15 +30,15 @@ export default {
     return {
       title: 'Hello, World!' as string,
       names: [
-        "Fulano",
-        "Ciclano",
-        "Beltrano",
-        "Mengano",
-        "João",
-        "Maria",
-        "Pedro",
-        "Lucas",
-        "Ana"
+        "DOUGLAS",
+        "FILIF",
+        "GUSTAVO W",
+        "GUSTAVO V",
+        "HERMANO",
+        "LEO",
+        "LUCAS",
+        "GABRIEL",
+        "ALANA"
       ] as string[],
       currentNameIndex: 0 as number,
       currentName: "" as string | undefined,
