@@ -48,7 +48,6 @@ export default {
         { title: 'Início', path: '/' },
         { title: 'Chat', path: '/chat' },
         { title: 'Sobre', path: '/sobre' }
-        // Item de Contato removido
       ]
     }
   },
