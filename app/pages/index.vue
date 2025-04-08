@@ -38,7 +38,8 @@ export default {
         "LEO",
         "LUCAS",
         "GABRIEL",
-        "ALANA"
+        "ALANA",
+        "ISAAC"
       ] as string[],
       currentNameIndex: 0 as number,
       currentName: "" as string | undefined,
