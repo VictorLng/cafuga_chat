@@ -82,9 +82,9 @@ export default {
         { id: 7, name: 'Hermano(MC)', role: 'MC(de funk) & Historiador' },
         { id: 8, name: 'Leo', role: 'Especialista em RPG & Detetive' },
         { id: 9, name: 'Lucas', role: 'Dono Oficial do canal LULUCA games' },
-        { id: 9, name: 'Isaac', role: 'Filho do Valorant com A APVS' },
-        { id: 10, name: 'Gabriel', role: 'VI VI VI VI VI' },
-        { id: 11, name: 'Elias', role: 'Marsupiau Paulista & Loko' },
+        { id: 10, name: 'Isaac', role: 'Filho do Valorant com A APVS' },
+        { id: 11, name: 'Gabriel', role: 'VI VI VI VI VI' },
+        { id: 12, name: 'Elias', role: 'Marsupiau Paulista & Loko' },
       ]
     };
   },
