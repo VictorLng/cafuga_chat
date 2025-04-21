@@ -52,11 +52,11 @@
         <div class="social-login">
           <p>Ou entre com</p>
           <div class="social-buttons">
-            <button class="social-btn discord">
-              Discord
+            <button class="social-btn discord"  @click="loginByDiscord">
+              <img class="logo-images" src="/discord-logo.png" alt="logo" > Discord
             </button>
-            <button class="social-btn google">
-              Google
+            <button class="social-btn google" @click="loginByGoogle">
+              <img class="logo-images" src="/google-logo.png" alt="logo"> Google
             </button>
           </div>
         </div>
@@ -71,6 +71,7 @@
 
 <script lang="ts">
 import HeaderPages from '../components/HeaderPages.vue';
+import axios from 'axios';
 
 export default {
   name: 'LoginPage',
@@ -88,10 +89,41 @@ export default {
     }
   },
   methods: {
-    login() {
-      console.log('Dados de login:', this.formData);
-      alert('Login realizado com sucesso!');
-      this.$router.push('/');
+    async login() {
+      await this.$axios.post('/api/login', this.formData)
+        .then(response => {
+          // Handle successful login
+          console.log('Login successful:', response.data);
+          // this.$router.push('/');
+        })
+        .catch(error => {
+          // Handle login error
+          console.error('Login error:', error);
+        });
+    },
+    async loginByDiscord() {
+      await this.$axios.post('/auth/discord', this.formData)
+        .then(response => {
+          // Handle successful login
+          console.log('Login successful:', response.data);
+          // this.$router.push('/');
+        })
+        .catch(error => {
+          // Handle login error
+          console.error('Login error:', error);
+        });
+    },
+    async loginByGoogle() {
+      await this.$axios.post('/auth/google', this.formData)
+        .then(response => {
+          // Handle successful login
+          console.log('Login successful:', response.data);
+          // this.$router.push('/');
+        })
+        .catch(error => {
+          // Handle login error
+          console.error('Login error:', error);
+        });
     }
   }
 }
@@ -258,9 +290,12 @@ input[type="password"]:focus {
   padding: 0.8rem;
   border: none;
   border-radius: 4px;
-  font-weight: bold;
+  font-weight: medium;
   cursor: pointer;
   transition: opacity 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-btn:hover {
@@ -290,5 +325,11 @@ input[type="password"]:focus {
 
 .link:hover {
   text-decoration: underline;
+}
+
+.logo-images {
+  width: 20px;
+  height: 20px;
+  margin-right: 0.5rem;
 }
 </style>

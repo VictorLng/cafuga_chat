@@ -15,6 +15,22 @@ export default defineNuxtConfig({
     devLogs: false,
   },
 
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'icon',
+          type: 'image/x-icon',
+          href: '/cafuga_club_favicon.ico',
+        },
+      ],
+      title: 'Cafuga Club',
+    },
+  },
+
+  plugins: [
+    '~/plugins/axios.ts',
+  ],
   build: {
     transpile: ['vuetify'],
   },
